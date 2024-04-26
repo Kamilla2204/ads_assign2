@@ -1,10 +1,10 @@
 public interface MyList<T> extends Iterable<T> {
     void addElement(T item);
     void set(int index, T item);
-    void add (int index, T item);
+    void add (T data);
     void addFirst(T item);
     void addLast(T item);
-    T get (int index);
+    T get ();
     T getFirst();
     T getLast();
     void remove (int index);
