@@ -10,11 +10,11 @@ public class MyMinHeap<T extends Comparable<T>> {
 
     public void clear(){
         heap.clear();
-    }                          // all elements will be deleted from heap
+    }
 
     public T getMin(){
         return heap.getFirst();
-    }                          //1st element get
+    }
 
 
     public T extractMin(){
@@ -23,13 +23,13 @@ public class MyMinHeap<T extends Comparable<T>> {
         heap.removeLast();
         heapify(0);
         return min;
-    }                       // Gets minimum and swaps with last element and removes last element
+    }
 
     public void insert(T item){
         heap.add(item);
         int i = heap.size() - 1;
         heapify(i);
-    }                      // new item will insert at the end of heap
+    }
 
     private void heapify(int i){
         int left = leftChildOf(i);
@@ -45,7 +45,7 @@ public class MyMinHeap<T extends Comparable<T>> {
             swap(i, minimum);
             heapify(minimum);
         }
-    }                        // heapify function to maintain the heap functions after deletion or insertion
+    }
 
     private void traverse(int i){
         if (i < heap.size()){
@@ -53,7 +53,7 @@ public class MyMinHeap<T extends Comparable<T>> {
             traverse(leftChildOf(i));
             traverse(rightChildOf(i));
         }
-    }              // traverse function to print the heap
+    }
     public int leftChildOf(int i){
         return 2 * i;
     }                 //left child
