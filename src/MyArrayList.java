@@ -35,11 +35,11 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public void add(T data) {
-        checkIndex(index);
+        checkIndex(size);
         if (size == arr.length) {
             increase();
         }
-        arr[index] = data;
+        arr[size] = data;
     }
 
     private void checkIndex(int index) {
@@ -60,9 +60,14 @@ public class MyArrayList<T> implements MyList<T> {
         size++;
     }
 
-
     @Override
     public T get() {
+        return null;
+    }
+
+
+    @Override
+    public T get(int index) {
         checkIndex(index);
         return arr[index];
     }

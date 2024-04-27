@@ -9,8 +9,8 @@ public abstract class MyLinkedList<T> implements MyList<T> {
         size = 0;
     }
 
-    @Override
-    public static void addElement(T data) {
+
+    public void addElement(T data) {
         Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -26,14 +26,11 @@ public abstract class MyLinkedList<T> implements MyList<T> {
     }
 
 
-    public int getSize() {
-        return size;
-    }
     @Override
     public T get() {
-        checkIndex(index);
+        checkIndex(size);
         Node<T> current = head;
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < size; i++) {
             current = current.next;
         }
         return current.data;

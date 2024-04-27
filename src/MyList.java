@@ -5,6 +5,9 @@ public interface MyList<T> extends Iterable<T> {
     void addFirst(T item);
     void addLast(T item);
     T get ();
+
+    T get(int index);
+
     T getFirst();
     T getLast();
     void remove (int index);

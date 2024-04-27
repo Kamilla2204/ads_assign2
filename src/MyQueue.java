@@ -1,6 +1,6 @@
 import java.util.NoSuchElementException;
 
-public class MyQueue<T> extends MyLinkedList<T>{
+public abstract class MyQueue<T> extends MyLinkedList<T>{
     private int size;
     public MyQueue(){
         super();
@@ -15,7 +15,6 @@ public class MyQueue<T> extends MyLinkedList<T>{
         if (isEmpty()){
             throw new NoSuchElementException("Queue is empty!");
         }
-        super.removeFirst();
         size--;
     }
 
@@ -28,8 +27,8 @@ public class MyQueue<T> extends MyLinkedList<T>{
         return super.get();
     }
 
-    public int size(){
-        return MyQueue.size();
+    public  int size(){
+        return size();
     }
 
     public boolean isEmpty(){
